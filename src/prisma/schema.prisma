@@ -33,7 +33,7 @@ model Role {
   roleName  String    @db.VarChar(150) @unique
   createdAt DateTime  @default(now()) @map("created_at")
   updatedAt DateTime  @updatedAt @map("updated_at")
-
+  refreshToken  String    @db.Text
   profile Profile  @relation(fields: [profileId],references: [id], onDelete:NoAction)
   profileId Int @unique
   permissions Permissions[]
@@ -45,7 +45,6 @@ model Permissions {
   id        Int       @id @default(autoincrement())
   permissonName      String    @db.VarChar(150) @unique
   description DateTime  @default(now()) @map("created_at")
-
   roleId  Int
   role Role  @relation(fields: [roleId], references: [id], onDelete: Cascade)
 
