@@ -8,8 +8,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/index.js",
-    "build": "npx prisma db push && npx prisma generate && node src/index.js",
+    "dev": "nodemon index.js",
+    "build": "prisma generate && node index.js",
     "postinstall": "prisma generate"
   },
   "keywords": [],
