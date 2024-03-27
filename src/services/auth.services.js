@@ -1,5 +1,6 @@
 const jwt = require("jsonwebtoken");
-const prisma = require("../prismadb");
+const { PrismaClient } = require("@prisma/client");
+const prisma = new PrismaClient();
 const secretKey = process.env.JWT_SECRET_KEY; // Use the secret key from environment variables
 const refreshTokenSecret = process.env.REFRESH_TOKEN_SECRET; // Use the refresh token secret from environment variables
 const bcrypt = require("bcrypt");
